@@ -30,8 +30,8 @@ Ambos os comportamentos podem ser monitorados a partir do dashboard.
 
 Imagem do sistema fechado (sistema em funcionamento normal)
 
-![Modelo de Dados](https://github.com/arturbdr/SpringCloudEurekaRibbonHystrix/blob/master/documentacao/img/circuitoFechado-sistemaOk.png "")
+![Sistema Ok](https://github.com/arturbdr/SpringCloudEurekaRibbonFeignHystrix/blob/master/documentacao/img/circuitoFechado-sistemaOk.png "")
 
 Imagem do sistema aberto (sistema em pane - serviço fora)
 
-![Modelo de Dados](https://github.com/arturbdr/SpringCloudEurekaRibbonHystrix/blob/master/documentacao/img/circuitoAberto-SistemaDown.png "")
+![Sistema não ok](https://github.com/arturbdr/SpringCloudEurekaRibbonFeignHystrix/blob/master/documentacao/img/circuitoAberto-SistemaDown.png "")

@@ -1,0 +1,13 @@
+*.class
+.metadata
+*.tmp
+*.bak
+.settings/
+.loadpath
+.classpath
+.project
+/target/
+*.iml
+
+.idea/
+

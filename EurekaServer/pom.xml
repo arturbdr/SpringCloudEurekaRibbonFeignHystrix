@@ -3,12 +3,12 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
 
-    <groupId>br.com.learn.spring.cloud.eureka.server</groupId>
-    <artifactId>SpringCloudEurekaServer</artifactId>
+    <groupId>com.learn.spring.cloud.eureka.server</groupId>
+    <artifactId>EurekaServer</artifactId>
     <version>1.0.0</version>
     <packaging>jar</packaging>
 
-    <name>SpringCloudEurekaServer</name>
+    <name>EurekaServer</name>
     <description>Spring Cloud Eureka Server</description>
 
     <properties>
@@ -24,18 +24,19 @@
         <relativePath/>
     </parent>
 
-<dependencyManagement>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-dependencies</artifactId>
+                <version>Dalston.SR5</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
     <dependencies>
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>or</artifactId>
-        </dependency>
-    </dependencies>
-</dependencyManagement>
-
-
-    <dependencies>
-
         <dependency>
             <groupId>org.springframework.cloud</groupId>
             <artifactId>spring-cloud-starter-eureka-server</artifactId>

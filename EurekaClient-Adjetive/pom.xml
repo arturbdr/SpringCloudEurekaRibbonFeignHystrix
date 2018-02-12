@@ -4,11 +4,11 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.learn.spring.cloud.eureka.client</groupId>
-    <artifactId>SpringCloudEurekaClientAdjective</artifactId>
+    <artifactId>EurekaClientAdjective</artifactId>
     <version>1.0.0</version>
     <packaging>jar</packaging>
 
-    <name>SpringCloudEurekaClientAdjective</name>
+    <name>EurekaClientAdjective</name>
     <description>Spring Cloud Project of an Eureka Client</description>
 
     <parent>

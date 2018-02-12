@@ -1,6 +1,7 @@
-package br.com.learn.spring.cloud.eureka.client.gateway.http;
+package com.learn.spring.cloud.eureka.client.gateway.http;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -13,11 +14,11 @@ public class CatchWordController {
     private String words;
 
     @GetMapping("/word")
-    public String getAdjective() {
+    public ResponseEntity<String> getAdjective() {
         String[] wordsArray = this.words.split(",");
 
         int wordPosition = new Random().nextInt(wordsArray.length);
-        return wordsArray[wordPosition];
+        return ResponseEntity.ok(wordsArray[wordPosition]);
     }
 
 }

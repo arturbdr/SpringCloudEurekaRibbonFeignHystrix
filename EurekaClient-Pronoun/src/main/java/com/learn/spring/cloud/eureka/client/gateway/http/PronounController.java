@@ -1,23 +1,23 @@
-package br.com.learn.spring.cloud.eureka.client.gateway.http;
+package com.learn.spring.cloud.eureka.client.gateway.http;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.Random;
 
 @RestController
-public class CatchWordController {
+public class PronounController {
 
-    @Value("${palavras}")
+    @Value("${words}")
     private String words;
 
     @GetMapping("/word")
-    public String getPronoun() {
-        String[] wordsArray = words.split(",");
+    public ResponseEntity<String> getPronoun() {
+        final String[] wordsArray = words.split(",");
 
         int i = new Random().nextInt(wordsArray.length);
-        return wordsArray[i];
+        return ResponseEntity.ok(wordsArray[i]);
     }
-
 }

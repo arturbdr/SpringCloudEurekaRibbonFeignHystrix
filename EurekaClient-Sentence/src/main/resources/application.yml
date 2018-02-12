@@ -1,0 +1,27 @@
+client:
+    adjective:
+        connectionTimeoutInMillis: 5000
+        name: EurekaClientAdjective
+        readTimeoutInMillis: 5000
+eureka:
+    client:
+        enabled: true
+        eureka-service-url-poll-interval-seconds: 10
+        fetch-registry: true
+        register-with-eureka: true
+        serviceUrl:
+            defaultZone: http://localhost:8010/eureka
+    instance:
+        instanceId: ${spring.application.name}:${vcap.application.instance_id:${spring.application.instance_id:${random.value}}}
+        prefer-ip-address: true
+feign:
+    hystrix:
+        enabled: true
+management:
+    security:
+        enabled: false
+server:
+    port: 8020
+spring:
+    application:
+        name: EurekaClientSentence

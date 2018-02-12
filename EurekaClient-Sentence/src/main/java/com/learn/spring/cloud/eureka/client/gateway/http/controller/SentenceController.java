@@ -12,7 +12,7 @@ public class SentenceController {
     private final WordService wordService;
 
     @GetMapping("/sentence/loadbalance")
-    public String getSentenca() {
+    public String getSentenceRibbon() {
         StringBuffer sentence = new StringBuffer();
 
         sentence.append(wordService.getWord("EurekaClientPronoun").get());
@@ -23,9 +23,8 @@ public class SentenceController {
     }
 
     @GetMapping("/sentence/feign")
-    public String getSentencaFeign() {
-        return wordService.getPronoun() + wordService.getAdjective();
+    public String getSentenceFeign() {
+        return wordService.getPronoun() + " " + wordService.getAdjective();
     }
-
 
 }

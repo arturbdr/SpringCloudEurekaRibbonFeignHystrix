@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 
 import static org.springframework.web.bind.annotation.RequestMethod.GET;
 
-@FeignClient(value = "${client.adjective.name}", configuration = FeignAdjectiveConfig.class, fallbackFactory = HystrixClientFallback.class)
+@FeignClient(value = "${client.adjective.name:}", url="${client.adjective.url:}", configuration = FeignAdjectiveConfig.class, fallbackFactory = HystrixClientFallback.class)
 public interface ClientAdjectiveRemoteService {
 
     @RequestMapping(value = "/word", method = GET)

@@ -15,9 +15,9 @@ public class CatchWordController {
 
     @GetMapping("/word")
     public ResponseEntity<String> getAdjective() {
-        String[] wordsArray = this.words.split(",");
+        final String[] wordsArray = this.words.split(",");
 
-        int wordPosition = new Random().nextInt(wordsArray.length);
+        final int wordPosition = new Random().nextInt(wordsArray.length);
         return ResponseEntity.ok(wordsArray[wordPosition]);
     }
 

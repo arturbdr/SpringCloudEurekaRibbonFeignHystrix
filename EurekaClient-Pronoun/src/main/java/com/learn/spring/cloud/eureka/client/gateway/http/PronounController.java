@@ -10,7 +10,7 @@ import java.util.Random;
 @RestController
 public class PronounController {
 
-    @Value("${words}")
+    @Value("${pronouns}")
     private String words;
 
     @GetMapping("/word")

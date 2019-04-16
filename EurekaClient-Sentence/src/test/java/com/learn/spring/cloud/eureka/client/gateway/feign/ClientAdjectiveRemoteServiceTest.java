@@ -15,7 +15,7 @@ import static org.springframework.boot.test.context.SpringBootTest.WebEnvironmen
 @SpringBootTest(webEnvironment = RANDOM_PORT)
 @RunWith(SpringRunner.class)
 @AutoConfigureWireMock(port = 0)
-public class ClientAdjectiveRemoteServiceTest extends CommonsTestingConfig {
+public class ClientAdjectiveRemoteServiceTest {
 
     // A service that calls out over HTTP
     @Autowired

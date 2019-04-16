@@ -11,6 +11,6 @@ public class HystrixClientFallback implements FallbackFactory<ClientAdjectiveRem
     @Override
     public ClientAdjectiveRemoteService create(Throwable cause) {
         log.error("Failed to Call service!", cause);
-        return () -> " FAILED!!!!";
+        return () -> "something is not ok";
     }
 }

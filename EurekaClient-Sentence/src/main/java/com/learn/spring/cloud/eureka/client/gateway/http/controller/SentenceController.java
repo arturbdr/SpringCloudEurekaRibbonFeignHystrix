@@ -13,7 +13,7 @@ public class SentenceController {
 
     @GetMapping("/sentence/loadbalance")
     public String getSentenceRibbon() {
-        StringBuffer sentence = new StringBuffer();
+        final StringBuilder sentence = new StringBuilder();
 
         sentence.append(wordService.getWord("EurekaClientPronoun").get());
         sentence.append(" ");

@@ -12,10 +12,8 @@
     <description>Spring Cloud Eureka Client Project</description>
 
     <properties>
-        <feign-jackson.version>9.5.1</feign-jackson.version>
         <java.version>1.8</java.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <spring-cloud-dependencies.version>Dalston.SR5</spring-cloud-dependencies.version>
     </properties>
 
     <parent>
@@ -96,11 +94,6 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-actuator</artifactId>
-        </dependency>
-
-        <dependency>
-            <groupId>org.springframework.cloud</groupId>
-            <artifactId>spring-cloud-starter-feign</artifactId>
         </dependency>
 
     </dependencies>

@@ -23,6 +23,10 @@ After starting this app, it's possible to consume the endpoint directly performi
 Spring Boot app that will register itself on Eureka at port 8010. This app will also fetch the other 2 registered apps to consume their services 
 to form a Sentence.
 This app is configured with Hystrix and Hystrix Dashboard.
+After starting this app, it's possible to consume the endpoint directly performing:
+ `curl http://localhost:8120/sentence/feign` this will use feign to consume the other 2 app services
+ or
+ `curl http://localhost:8120/sentence/loadbalance` this will use resttemplate with ribbon to consume the other 2 app services
 
 Image of system closed (Normal)
 

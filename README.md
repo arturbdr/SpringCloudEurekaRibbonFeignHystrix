@@ -1,37 +1,33 @@
 # SpringCloudEurekaRibbonFeignHystrix
-Nesse repositório estão contidos 4 projetos do tipo SpringCloud:
+This repo contain 4 Spring Boot projects
 
-- SpringCloudEurekaServer
-- SpringCloudEurekaClient-Adjetivo
-- SpringCloudEurekaClient-Pronome
-- SpringCloudEurekaRibbonClient-Sentenca
+1. EurekaServer
+2. EurekaClient-Adjective
+3. EurekaClient-Pronoun
+4. EurekaClient-Sentence
  
---
 
-- SpringCloudEurekaServer
+- EurekaServer
+Spring Boot app that will provide an Eureka Server. To make all the other apps (described below) works properly, this app should be started first.
+After start, it will start at port 8010. Open a browser `http://localhost:8010 ` to check the Eureka status page
 
-Mesmo comportamento do projeto disponibilizado em https://github.com/arturbdr/SpringCloudEureka/tree/master/SpringCloudEurekaServer
+- EurekaClient-Adjective
+Spring Boot app that will register itself on Eureka at port 8010. Provides an endpoint that returns one of the following adjective: like,dislike
+After starting this app, it's possible to consume the endpoint directly performing `curl http://localhost:8011/word`
 
-- SpringCloudEurekaClient-Adjetivo
+- EurekaClient-Pronoun
+Spring Boot app that will register itself on Eureka at port 8010. Provides an endpoint that returns one of the following pronoum: I,You,He
+After starting this app, it's possible to consume the endpoint directly performing `curl http://localhost:8123/word`
 
-Mesmo comportamento do projeto disponibilizado em https://github.com/arturbdr/SpringCloudEurekaRibbonFeign/tree/master/SpringCloudEurekaClient-Adjetivo
+- EurekaClient-Sentence
+Spring Boot app that will register itself on Eureka at port 8010. This app will also fetch the other 2 registered apps to consume their services 
+to form a Sentence.
+This app is configured with Hystrix and Hystrix Dashboard.
 
+Image of system closed (Normal)
 
-- SpringCloudEurekaClient-Pronome
+![ok](https://github.com/arturbdr/SpringCloudEurekaRibbonFeignHystrix/blob/master/doc/img/circuitoFechado-sistemaOk.png "")
 
-Mesmo comportamento do projeto disponibilizado em https://github.com/arturbdr/SpringCloudEurekaRibbonFeign/tree/master/SpringCloudEurekaClient-Pronome
+Image of system open (Problem)
 
-- SpringCloudEurekaRibbonClientSentenca
- 
-Esse é o projeto que fará uso do LoadBalance de aplicação (Ribbon) assim como http client binder Feign e o Circuit Breaker Hystrix. 
-Para acompanhamento de como está a execução do projeto, foi adicionado, também, o Hystrix Dashboard e abaixo estão as imagens de funcionamento contemplando tanto o sistema com operação normal (circuito fechado) assim como o sistema em pane e o Hystrix fazendo o tratamento.
-Ambos os comportamentos podem ser monitorados a partir do dashboard.
-
-
-Imagem do sistema fechado (sistema em funcionamento normal)
-
-![Sistema Ok](https://github.com/arturbdr/SpringCloudEurekaRibbonFeignHystrix/blob/master/documentacao/img/circuitoFechado-sistemaOk.png "")
-
-Imagem do sistema aberto (sistema em pane - serviço fora)
-
-![Sistema não ok](https://github.com/arturbdr/SpringCloudEurekaRibbonFeignHystrix/blob/master/documentacao/img/circuitoAberto-SistemaDown.png "")
+![not ok](https://github.com/arturbdr/SpringCloudEurekaRibbonFeignHystrix/blob/master/doc/img/circuitoAberto-SistemaDown.png "")
